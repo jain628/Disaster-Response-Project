@@ -38,4 +38,4 @@ Must runing with Python 3 with libraries of numpy, pandas, sqlalchemy, re, NLTK,
 ### Licensing & Acknowledgement
 This app was completed as part of the Udacity Data Scientist Nanodegree. Code templates and data were provided by them. Special thanks to udacity for this training. Feel free to utilize the contents of this while citing me and/or udacity accordingly.<br>
 
-### NOTE: Preparation folder is not necessary for this project to run.
+NOTE: Preparation folder is not necessary for this project to run.
