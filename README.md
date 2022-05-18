@@ -24,10 +24,14 @@ It can be viewed in web_app_screenshot.png<br>
 
 The web app also displays visualizations of the data.
 visualizations1.png, visualizations2.png, visualizations3.png gives the feel of data.<br>
-<img src ="https://github.com/jain628/Disaster-Response-Project/blob/main/visualization1.jpg">
-<img src ="https://github.com/jain628/Disaster-Response-Project/blob/main/visualization2.jpg">
-<img src ="https://github.com/jain628/Disaster-Response-Project/blob/main/visualization3.jpg">
-<img src ="https://github.com/jain628/Disaster-Response-Project/blob/main/web_app_screenshot.jpg">
+### Visualization 1
+<img src ="https://github.com/jain628/Disaster-Response-Project/blob/main/visualization1.jpg"><br>
+### Visualization 2
+<img src ="https://github.com/jain628/Disaster-Response-Project/blob/main/visualization2.jpg"><br>
+### Visualization 3
+<img src ="https://github.com/jain628/Disaster-Response-Project/blob/main/visualization3.jpg"><br>
+### web app visualization
+<img src ="https://github.com/jain628/Disaster-Response-Project/blob/main/web_app_screenshot.jpg"><br>
 
 ### Installation
 Must runing with Python 3 with libraries of numpy, pandas, sqlalchemy, re, NLTK, pickle, Sklearn, plotly and flask libraries.<br>
