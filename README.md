@@ -20,7 +20,7 @@
 ### Project Description
 
 Here, a model is build to classify messages that are sent during disasters. There are 36 pre-defined categories, and examples of these categories include Aid Related, Medical Help, Search And Rescue, etc. By classifying these messages, we can allow these messages to be sent to the appropriate disaster relief agency. This project will involve the building of a basic ETL and Machine Learning pipeline to facilitate the task. This is also a multi-label classification task, since a message can belong to one or more categories.Using the web app an emergency worker can input a new message and get classification results in several categories so to have an idea what kind of help is needed: "water", "shelter", "food", etc.
-It can be viewed in web_app_screenshot.png<br>
+It can be viewed in web_app.png<br>
 
 The web app also displays visualizations of the data.
 visualizations1.png, visualizations2.png, visualizations3.png gives the feel of data.<br>
