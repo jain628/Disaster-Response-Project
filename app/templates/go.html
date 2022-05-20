@@ -1,40 +1,24 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2022.6">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
-</head>
-<body>
-<p class="p1">{% extends "master.html" %}</p>
-<p class="p1">{% block title %}Results{% endblock %}</p>
-<p class="p2"><br></p>
-<p class="p1">{% block message %}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;hr /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h4 class="text-center"&gt;MESSAGE&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="text-center"&gt;&lt;i&gt;{{query}}&lt;/i&gt;&lt;/p&gt;</p>
-<p class="p1">{% endblock %}</p>
-<p class="p2"><br></p>
-<p class="p1">{% block content %}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1 class="text-center"&gt;Result&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;ul class="list-group"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>{% for category, classification in classification_result.items() %}</p>
-<p class="p1"><span class="Apple-converted-space">                </span>{% if classification == 1 %}</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li class="list-group-item list-group-item-success text-center"&gt;{{category.replace('_', ' ').title()}}&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>{% else %}</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li class="list-group-item list-group-item-dark text-center"&gt;{{category.replace('_', ' ').title()}}&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>{% endif %}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>{% endfor %}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">{% endblock %}</p>
-</body>
-</html>
+{% extends "master.html" %}
+{% block title %}Results{% endblock %}
+
+{% block message %}
+    <hr />
+    <h4 class="text-center">MESSAGE</h4>
+    <p class="text-center"><i>{{query}}</i></p>
+{% endblock %}
+
+{% block content %}
+    <h1 class="text-center">Result</h1>
+        <ul class="list-group">
+            {% for category, classification in classification_result.items() %}
+                {% if classification == 1 %}
+                    <li class="list-group-item list-group-item-success text-center">{{category.replace('_', ' ').title()}}</li>
+                {% else %}
+                    <li class="list-group-item list-group-item-dark text-center">{{category.replace('_', ' ').title()}}</li>
+                {% endif %}
+            {% endfor %}
+
+        </div>
+    </div>
+
+{% endblock %}
