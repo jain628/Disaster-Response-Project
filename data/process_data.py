@@ -1,3 +1,4 @@
+#importing libraries
 import sys
 import pandas as pd
 import numpy as np
@@ -5,6 +6,16 @@ from sqlalchemy import create_engine
 
 
 def load_data(messages_filepath, categories_filepath):
+    """
+    Returns a merged python dataframe after reading two csv files and doing data mining.
+    
+    Parameters:
+        messages_filepath (str): a string value for 'disaster_messages.csv' file path
+        categories_filepath (str):a string value for 'disaster_categories.csv' file path
+    
+    Returns:
+        df (python dataframe):a merged dataframe with messages and binary values from disaster_categories.csv
+    """
     # load dataset
     categories = pd.read_csv(categories_filepath)
     messages = pd.read_csv(messages_filepath)
@@ -47,25 +58,52 @@ def load_data(messages_filepath, categories_filepath):
     df = pd.concat([df,categories],axis=1).drop_duplicates()
     df.head()
     df.drop_duplicates(subset=['id'],inplace=True)
+    df.drop(df[df['related'] == 2.0].index, inplace = True)
     df = df.fillna(0)
     return df
     pass
 
 
 def clean_data(df):
+    """
+    Returns a cleaned python dataframe.
+    
+    Parameters:
+        df(python dataframe): dataframe returned from load_data(messages_filepath,categories_filepath) function
+    
+    Returns:
+        df (python dataframe):a cleaned dataframe after data mining and dropping duplicates.
+    """
     df = df.drop_duplicates() #drop duplicates
     return df
-    pass
 
 
 def save_data(df, database_filename):
+    """
+    Returns a python dataframe after saving into a sqlite database.
+    
+    Parameters:
+        df (python dataframe): dataframe returned from clean_data(df) function
+        database_filename (str):a string value for database filename 
+    
+    Returns:
+        df (python dataframe):a dataframe saved into DisasterResponse sqlite database 
+       """
     engine = create_engine('sqlite:///'+database_filename)
     df.to_sql('DisasterResponse',engine,if_exists ='append', index=False)
-    return df
-    pass  
+    return df  
 
 
 def main():
+    """
+    Executes all the functions inside main to generate ETL pipeline
+    
+    Parameters:
+        none
+    
+    Returns:
+        none
+    """
     if len(sys.argv) == 4:
 
         messages_filepath, categories_filepath, database_filepath = sys.argv[1:]
